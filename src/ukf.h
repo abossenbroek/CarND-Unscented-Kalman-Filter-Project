@@ -70,8 +70,6 @@ public:
     ///* Sigma point spreading parameter
     double lambda_;
 
-    MatrixXd R_radar_;
-    MatrixXd R_lidar_;
 
     ///* Track the radar Normalized Innovation Squared (NIS)
     double NIS_radar_;
@@ -112,8 +110,6 @@ public:
      * @param meas_package The measurement at k+1
      */
     void UpdateRadar(MeasurementPackage meas_package);
-
-    void UpdateUKF(MeasurementPackage meas_package, MatrixXd Z_sigma, int n_z);
 
     void NormalizeAngle(double *angle);
 };
